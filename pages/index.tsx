@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 
 import styles from '@/pages/index.module.css'
+import { isProd } from '@/constants/isProd'
 
 export default function Home() {
   return (
@@ -69,7 +70,7 @@ export default function Home() {
           Powered by{' '}
           <span className={styles.logo}>
             <Image
-              src='/vercel.svg'
+              src={`${isProd ? '/ci-cd-practice' : ''}/vercel.svg`}
               alt='Vercel Logo'
               width={72}
               height={16}
