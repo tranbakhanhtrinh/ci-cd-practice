@@ -1,7 +1,10 @@
 /**
  * @type {import('next').NextConfig}
  */
+
+export const isProd = process.env.NODE_ENV === 'production'
 const nextConfig = {
+  basePath: isProd ? '/ci-cd-practice' : '',
   output: 'export',
   images: {
     unoptimized: true
